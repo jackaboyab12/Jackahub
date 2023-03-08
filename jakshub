@@ -1,0 +1,340 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Internal Hub", "GrapeTheme")
+
+--Admin Script
+local Admin = Window:NewTab("Admin Scripts")
+local AdminSection = Admin:NewSection("Diffrent Admin Scripts")
+
+
+  AdminSection:NewButton("Infi Yeild", "Gives You infinite yield Admin FE", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()  
+end)
+
+AdminSection:NewButton("CMD-X", "Gives you CMD-X Admin FE", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()  
+end)
+
+
+AdminSection:NewButton("Fates Admin", "Gives you fate admin commands FE", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
+end)
+
+AdminSection:NewButton("Homebrew Admin", "Gives you homebrew admin FE", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/jackaboyab12/homebrew/main/homrbrew?token=GHSAT0AAAAAAB3ESAGS5OUUX6YOYUTJV7UQY3SXA6A"))();
+end)
+
+
+
+----Player
+local Player = Window:NewTab("Local Player")
+local PlayerSection = Player:NewSection("local Player")
+
+PlayerSection:NewSlider("WalkSpeed", "Makes you fast asf boiii", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+PlayerSection:NewSlider("JumpPower", "Makes you just high asf boiii", 500, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+PlayerSection:NewButton("Anti-AFK", "mo more afk", function()
+     loadstring(game:HttpGet("https://pastebin.com/raw/3tsbWEDf"))();
+end)
+
+-------------
+----Fe Scripts
+local FEScripts = Window:NewTab("FE scripts/fun ")
+local FEScriptsSection = FEScripts:NewSection("FE Scripts")
+
+
+
+FEScriptsSection:NewButton("Walk on walls", "i mean just walk on walls Z to toggle", function()
+     loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))();
+end)
+
+
+FEScriptsSection:NewButton("FE Chat Hax", "makes it so u chat as another person kinda", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/ant-7802/--/main/straightmilk.lua'))()
+end)
+
+FEScriptsSection:NewButton("W Rizz Script", "Get RIZZ", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/mikhailramlal/Rizzer/main/main"))()
+end)
+
+
+FEScriptsSection:NewButton("Telekinesis", "left click pck- up Y - throw", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/jackaboyab12/pick/main/pol"))();
+end)
+
+FEScriptsSection:NewButton("R15 Huge ASS LEG", "makes your leg big asf", function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/jackaboyab12/r15leg/main/hugeleg"))();
+     end)
+
+     FEScriptsSection:NewButton("R15 SUPER FLING", "WORKS FOR ONLY SOME GAMES", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/jackaboyab12/superlfing/main/suoper"))();
+      end)
+
+      FEScriptsSection:NewButton("EAT YOUR HATS", "takes your hats and eats them", function()
+       
+local lp = game.Players.LocalPlayer
+local char = lp.Character
+
+for i, v in pairs(char:GetChildren()) do
+    if v:IsA("BallSocketConstraint") then
+        v:Destroy()
+    end
+end
+
+for i, v in pairs(char:GetChildren()) do
+    if v:IsA("HingeConstraint") then
+        v:Destroy()
+    end
+end
+
+for i, v in pairs(char.Humanoid:GetAccessories()) do
+local hat = v.Name
+
+char[hat].Archivable = true
+local fake = char[hat]:Clone()
+fake.Parent = char
+fake.Handle.Transparency = 1
+
+local hold = false
+local enabled = false
+
+char[hat].Handle.AccessoryWeld:Destroy()
+
+local tool = Instance.new("Tool", lp.Backpack)
+tool.RequiresHandle = true
+tool.CanBeDropped = false
+tool.Name = hat
+
+local handle = Instance.new("Part", tool)
+handle.Name = "Handle"
+handle.Size = Vector3.new(1, 1, 1)
+handle.Massless = true
+handle.Transparency = 1
+
+local positions = {
+    forward = tool.GripForward,
+    pos = tool.GripPos,
+    right = tool.GripRight,
+    up = tool.GripUp
+}
+
+tool.Equipped:connect(function()
+ hold = true
+end)
+
+tool.Unequipped:connect(function()
+   hold = false
+end)
+
+tool.Activated:connect(function()
+    if enabled == false then
+        enabled = true
+        tool.GripForward = Vector3.new(-0.976,0,-0.217)
+    tool.GripPos = Vector3.new(.95,-0.76,1.4)
+    tool.GripRight = Vector3.new(0.217,0, 0.976)
+    tool.GripUp = Vector3.new(0,1,0)
+    wait(.8)
+    tool.GripForward = positions.forward
+    tool.GripPos = positions.pos
+    tool.GripRight = positions.right
+    tool.GripUp = positions.up
+    enabled = false
+    end
+end)
+
+game:GetService("RunService").Heartbeat:connect(function()
+    pcall(function()
+       char[hat].Handle.Velocity = Vector3.new(30, 0, 0)
+if hold == false then
+    char[hat].Handle.CFrame = fake.Handle.CFrame
+elseif hold == true then
+    char[hat].Handle.CFrame = handle.CFrame
+    end
+end)
+end)
+end
+      end)
+
+-------- Animations
+     local Ani = Window:NewTab("Animations")
+local AniSection = Ani:NewSection("cool Animations")
+
+AniSection:NewButton("Hamster ball (R15)(R6)", "Makes u roll around in a ball", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/jackaboyab12/Ball/main/ham"))();
+end)
+
+AniSection:NewButton("Back/front flip(R15)(R6)", "Makes u do back and front flip", function()
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/jackaboyab12/gym/main/gymna"))();
+end)
+
+AniSection:NewButton("Get sturdy (R15)", "to make it work click a letter on keybored", function()
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/jackaboyab12/Sturdy/main/source"))();
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------
+     local Hubs = Window:NewTab("FE Hubs")
+local HubSection = Hubs:NewSection("Diffrent FE Hubs")
+
+HubSection:NewButton("C00lKidzz gui", "old troll thing", function()
+     loadstring(game:GetObjects("rbxassetid://9827584846")[1].Source)()
+end)
+
+
+HubSection:NewButton("Vadrifts Chat Bypass/Cursing Script", "read it", function()
+     loadstring(game:HttpGet(('https://raw.githubusercontent.com/vqmpjay/scripts/main/vadriftsloader.lua'),true))()
+end)
+
+HubSection:NewButton("Nullware dancing", "nullware", function()
+     local LocalPlayer = game:GetService("Players").LocalPlayer
+local Heartbeat = game:GetService("RunService").Heartbeat
+
+Heartbeat:Connect(function()
+    LocalPlayer.MaximumSimulationRadius = math.huge
+    sethiddenproperty(LocalPlayer, "SimulationRadius", math.huge)
+end)
+
+getgenv().Theme = "Purple" -- To change the UI Theme, set this to one of the following options: "Red", "Purple", "Blue", "Green", "Yellow"
+loadstring(game:HttpGet("https://gist.githubusercontent.com/M6HqVBcddw2qaN4s/2d722888a388017c18028cd434c43a25/raw/dcccf1027fe4b90780e47767aaf584389c9d7771/EULma3fU90PUOKUn?identifier=".. (function()local a=""for b=1,256 do local c=math.random(1,3)a=a..string.char(c==1 and math.random(48,57)or c==2 and math.random(97,122)or c==3 and math.random(65,90))end;return a end)()))()
+end)
+
+
+HubSection:NewButton("Simplity v2", "animation hub", function()
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/HeyGyt/simplityv2/main/main"))()
+
+end)
+
+HubSection:NewButton("Geatek Fe Hub", "tbh i dont even know", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/Main.lua"))()
+
+
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local About = Window:NewTab("About")
+local AboutSection = About:NewSection("About")
+
+AboutSection:NewLabel("Made by jackaboyab#6217")
+
+
+AboutSection:NewKeybind("Toggle menu", "Open/closes menu", Enum.KeyCode.P, function()
+	Library:ToggleUI()
+end)
